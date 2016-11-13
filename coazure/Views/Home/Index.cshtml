@@ -5,3 +5,10 @@
 <div class="jumbotron">
     <h1>Welcome-to-@ViewBag.Environment!</h1>
 </div>
+
+<div>
+    You're logged in as @ViewBag.User. You are a @ViewBag.UserType.
+</div>
+<div>
+    @Html.ActionLink("See identity", "GetIdentity")
+</div>
