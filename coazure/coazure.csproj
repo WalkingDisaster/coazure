@@ -135,11 +135,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\coazure-app - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\coazure-app-stage - Web Deploy %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\coazure-app-stage - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\coazure-app-test - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\Prod.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
