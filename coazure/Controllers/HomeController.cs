@@ -7,6 +7,7 @@ namespace coazure.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Environment = ConfigurationManager.AppSettings["Environment"];
             return View();
         }
     }
