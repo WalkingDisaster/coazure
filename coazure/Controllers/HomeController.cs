@@ -10,12 +10,14 @@ namespace coazure.Controllers
     {
         public ActionResult Index()
         {
+            Trace.TraceInformation("Index");
             ViewBag.Environment = ConfigurationManager.AppSettings["Environment"];
 
             var principal = new PrincipalHelper(ClaimsPrincipal.Current);
             principal.DoIf(authenticated: t =>
             {
                 ViewBag.User = principal.GetFullName();
+                Trace.TraceInformation($"Logged in as {ViewBag.User}");
 
                 if (principal.IsAzureActiveDirectoryUser)
                     ViewBag.UserType = "Organization User";
@@ -24,6 +26,7 @@ namespace coazure.Controllers
             },
                 notAuthenticated: () =>
                 {
+                    Trace.TraceWarning("User not logged in!");
                     ViewBag.User = "Unknown";
                     ViewBag.UserType = "Unknown";
                 });
@@ -33,6 +36,7 @@ namespace coazure.Controllers
 
         public JsonResult GetIdentity()
         {
+            Trace.TraceInformation("Displaying Identity");
 
             var principal = new PrincipalHelper(ClaimsPrincipal.Current);
             var result = principal.MakeSerializable();
